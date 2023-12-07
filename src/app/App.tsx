@@ -1,9 +1,11 @@
 import React from 'react';
+import Routing from "pages/Routing/Routing";
+import 'shared/styles/index.scss'
 
 function App() {
   return (
     <div>
-      qwe
+        <Routing/>
     </div>
   );
 }
