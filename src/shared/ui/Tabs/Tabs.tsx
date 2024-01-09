@@ -20,7 +20,6 @@ export const Tabs = ({ mode, setMode }: TTabs) => {
                     key={m}
                     title={m}
                     onClick={changeMode}
-                    className={m.toLowerCase() === mode ? 'current' : ''}
                 />
             ))}
         </div>

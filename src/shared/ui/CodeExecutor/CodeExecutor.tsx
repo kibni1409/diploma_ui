@@ -1,18 +1,19 @@
 import {Button} from "shared/ui";
+import styles from './styles.module.scss'
 
 type TCodeExecutor = {
     srcDoc: string,
     runCode: () => void
 }
 const CodeExecutor = ({ srcDoc, runCode }: TCodeExecutor) => (
-    <div className='code-executor'>
-        <Button className='btn run' title='Run code' onClick={runCode} />
+    <div className={styles.resultWrapper}>
         <iframe
             srcDoc={srcDoc}
             title='output'
             sandbox='allow-scripts'
-            className='code-frame'
+            className={styles.iframe}
         />
+        <Button className='btn run' title='Run code' onClick={runCode} />
     </div>
 )
 

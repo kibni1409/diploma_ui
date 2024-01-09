@@ -1,5 +1,5 @@
 type TButtonProps = {
-    className: string,
+    className?: string,
     title: string,
     onClick: (value: any) => void
 }
