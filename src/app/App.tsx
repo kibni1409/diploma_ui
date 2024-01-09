@@ -1,21 +1,11 @@
-import './App.scss'
+import styles from './styles.module.scss'
 import { useState } from 'react'
-import { CodeEditor } from './components/CodeEditor'
-import { CodeExecutor } from './components/CodeExecutor'
-import {ThemeSelector} from "./components/ThemeSelector";
+import CodeExecutor from '../entities/CodeExecutor/ui/CodeExecutor'
+import Selector from "../shared/ui/Selector/Selector";
+import CodeEditor from '../entities/CodeEditor/ui/CodeEditor';
+import { initialCSS, initialHTML, initialJavaScript } from './const';
 
-const initialHTML = '<h1>hi</h1>'
-const initialCSS = `
-h1 {
-  color: green;
-}
-`
-const initialJavaScript = `
-document.querySelector("h1").addEventListener('click', function () {
-  this.textContent = "bye"
-  this.style.color = "red"
-}, { once: true })
-`
+
 
 export default function App() {
   const [html, setHtml] = useState(initialHTML)
@@ -56,10 +46,10 @@ export default function App() {
   }
 
   return (
-    <div className='app'>
+    <div className={styles.app}>
       <h1>Редактор кода</h1>
-      <ThemeSelector setTheme={setTheme} />
-      <div className='codeWrapper'>
+      <Selector setTheme={setTheme} />
+      <div className={styles.codeWrapper}>
         <CodeEditor {...propsByMode['html']} />
         <CodeEditor {...propsByMode['css']} />
         <CodeEditor {...propsByMode['js']} />

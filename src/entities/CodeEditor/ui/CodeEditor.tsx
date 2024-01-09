@@ -1,4 +1,5 @@
 import { Controlled } from 'react-codemirror2'
+import styles from './styles.module.scss'
 import 'codemirror/lib/codemirror.css'
 import 'codemirror/mode/xml/xml'
 import 'codemirror/mode/css/css'
@@ -8,22 +9,29 @@ import 'codemirror/addon/edit/closebrackets'
 import 'codemirror/addon/edit/matchtags'
 import 'codemirror/addon/edit/matchbrackets'
 
-export const CodeEditor = ({ mode, value, setValue, theme }) => {
 
+type TCodeEditorProps = {
+  mode: string,
+  value: string,
+  setValue: (value: string) => void,
+  theme: string
+}
 
-  const changeCode = (editor, data, value) => {
+const title: {[key: string]: string} = {
+  xml: 'HTML',
+  javascript: 'JS',
+  css: 'CSS'
+}
+
+const CodeEditor = ({ mode, value, setValue, theme }: TCodeEditorProps) => {
+
+  const changeCode = (editor: string, data: string, value: string) => {
     setValue(value)
   }
 
-  const title = {
-      xml: 'HTML',
-      javascript: 'JS',
-      css: 'CSS'
-  }
-
   return (
-    <div className='wrapper'>
-        <h1>{title[mode]}</h1>
+    <div className={styles.wrapper}>
+      <h1>{title[mode]}</h1>
       <Controlled
         value={value}
         onBeforeChange={changeCode}
@@ -43,3 +51,5 @@ export const CodeEditor = ({ mode, value, setValue, theme }) => {
     </div>
   )
 }
+
+export default CodeEditor

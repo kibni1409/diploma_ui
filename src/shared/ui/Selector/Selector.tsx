@@ -1,16 +1,22 @@
 import 'codemirror/theme/dracula.css'
 import 'codemirror/theme/material.css'
 import 'codemirror/theme/mdn-like.css'
+import { ChangeEvent } from 'react';
+import styles from './styles.module.scss'
 
 const themes = ['dracula', 'material', 'mdn-like']
 
-export const ThemeSelector = ({ setTheme }) => {
-  const selectTheme = ({ target: { value } }) => {
+type TSelector = {
+  setTheme: (value: string) => void
+}
+
+const Selector = ({ setTheme }: TSelector) => {
+  const selectTheme = ({ target: { value } }: ChangeEvent<HTMLSelectElement>) => {
     setTheme(value)
   }
 
   return (
-    <div className='theme-selector'>
+    <div className={styles.themeSelector}>
       <label htmlFor='theme'>Тема: </label>
       <select id='theme' name='theme' onChange={selectTheme}>
         {themes.map((t) => (
@@ -22,3 +28,5 @@ export const ThemeSelector = ({ setTheme }) => {
     </div>
   )
 }
+
+export default Selector
