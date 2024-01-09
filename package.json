@@ -8,7 +8,7 @@
     "@types/react": "^18.2.42",
     "@types/react-dom": "^18.2.17",
     "antd": "^5.9.0",
-    "codemirror": "^6.0.1",
+    "codemirror": "^5.65.0",
     "sass": "^1.66.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
