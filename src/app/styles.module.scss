@@ -30,7 +30,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap');
 
 *:not(.react-codemirror2 *) {
-  @include reset('Montserrat', 1rem, $warning);
+  @include reset('Montserrat', 1rem, $dark);
 }
 
 .app {
@@ -51,5 +51,14 @@
     display: flex;
     flex-direction: row;
     width: 95vw;
+    @include reset('Montserrat', 1rem, $warning);
+  }
+
+  .btnDrawer{
+    display: block;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    color: $light;
   }
 }

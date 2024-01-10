@@ -1,11 +1,22 @@
-import styles from './styles.module.scss'
+import styles from './styles.module.scss';
+import {
+  AppstoreOutlined,
+  ContainerOutlined,
+  DesktopOutlined,
+  MailOutlined,
+  MenuFoldOutlined,
+  MenuUnfoldOutlined,
+  PieChartOutlined,
+} from '@ant-design/icons';
 import { useState } from 'react'
 import CodeExecutor from '../entities/CodeExecutor/ui/CodeExecutor'
 import Selector from "../shared/ui/Selector/Selector";
 import CodeEditor from '../entities/CodeEditor/ui/CodeEditor';
 import { initialCSS, initialHTML, initialJavaScript } from './const';
+import { Button, Drawer, Menu, MenuProps } from 'antd';
 
 
+type MenuItem = Required<MenuProps>['items'][number];
 
 export default function App() {
   const [html, setHtml] = useState(initialHTML)
@@ -45,8 +56,37 @@ export default function App() {
     }
   }
 
+  const [open, setOpen] = useState(false);
+
+  const showDrawer = () => {
+    setOpen(true);
+  };
+
+  const onClose = () => {
+    setOpen(false);
+  };
+
   return (
     <div className={styles.app}>
+      <Button
+        type="default"
+        onClick={showDrawer}
+        className={styles.btnDrawer}
+      >
+        Open
+      </Button>
+      <Drawer
+        title="Меню"
+        placement={'left'}
+        closable={false}
+        onClose={onClose}
+        open={open}
+      >
+        <h1>Главная</h1>
+        <h1>Теория</h1>
+        <h1>Видео</h1>
+        <h1>Редактор кода</h1>
+      </Drawer>
       <h1>Редактор кода</h1>
       <Selector setTheme={setTheme} />
       <div className={styles.codeWrapper}>
