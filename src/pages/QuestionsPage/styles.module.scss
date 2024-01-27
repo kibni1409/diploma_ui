@@ -1,0 +1,18 @@
+.card {
+  max-width: 570px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
+  &:hover{
+    transform: scale(1.05);
+    transition: all ease-out 1s;
+  }
+}
+
+.list {
+  max-width: 50vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}

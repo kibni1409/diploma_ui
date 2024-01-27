@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { initialCSS, initialHTML, initialJavaScript } from './const';
 import styles from './styles.module.scss';
-import { Button, Drawer } from 'antd';
 import { Selector } from '../../shared';
 import CodeEditor from '../../entities/CodeEditor/ui/CodeEditor';
 import { CodeExecutor } from '../../entities/CodeExecutor';
@@ -45,38 +44,8 @@ const CodeEditorPage = () => {
     }
   }
 
-  const [open, setOpen] = useState(false);
-
-  const showDrawer = () => {
-    setOpen(true);
-  };
-
-  const onClose = () => {
-    setOpen(false);
-  };
-
-
   return (
     <div className={styles.app}>
-      <Button
-        type="default"
-        onClick={showDrawer}
-        className={styles.btnDrawer}
-      >
-        Open
-      </Button>
-      <Drawer
-        title="Меню"
-        placement={'left'}
-        closable={false}
-        onClose={onClose}
-        open={open}
-      >
-        <h1>Главная</h1>
-        <h1>Теория</h1>
-        <h1>Видео</h1>
-        <h1>Редактор кода</h1>
-      </Drawer>
       <h1>Редактор кода</h1>
       <Selector setTheme={setTheme} />
       <div className={styles.codeWrapper}>
