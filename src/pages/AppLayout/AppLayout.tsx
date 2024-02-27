@@ -2,7 +2,7 @@ import { NavLink, Outlet } from 'react-router-dom';
 import React, { useState } from 'react';
 import { Button, Drawer } from 'antd';
 import styles from './styles.module.scss';
-import { getCodeEditor, getQuestions } from '../../app/GetRouting/GetRouting';
+import { getCodeEditor, getMultiList, getQuestions } from '../../app/GetRouting/GetRouting';
 
 const AppLayout = () => {
 
@@ -45,6 +45,13 @@ const AppLayout = () => {
           onClick={onClose}
         >
           Теория
+        </NavLink>
+        <NavLink
+          className={styles.link}
+          to={getMultiList()}
+          onClick={onClose}
+        >
+          Мультимедия
         </NavLink>
       </Drawer>
       <Outlet/>
