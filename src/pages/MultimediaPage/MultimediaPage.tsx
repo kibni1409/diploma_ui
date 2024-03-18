@@ -28,9 +28,9 @@ const MultimediaPage = () => {
         return (
           <NavLink key={item.id} to={getMulti(item.id)} >
             <Card
-              title={item.title}
               className={styles.card}
             >
+              {item.title}
             </Card>
           </NavLink>
         )

@@ -26,8 +26,9 @@ const MultiView = () => {
       <h1>{question?.title}</h1>
       <iframe
         style={{
+          margin: '0 auto',
           maxWidth: '800px',
-          width: '80%',
+          width: '100%',
           maxHeight: '500px',
           height: '500px'
         }}
