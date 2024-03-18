@@ -2,6 +2,8 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import style from './styles.module.scss';
+import Markdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 
 type TQuestion = {
   id: string,
@@ -21,10 +23,14 @@ const TheoryPage = () => {
       })
   }, []);
 
+  if(!question){
+    return null
+  }
+
   return (
     <div className={style.theory}>
-      <h1>{question?.title}</h1>
-      <span style={{color: 'white'}}>{question?.text}</span>
+      <Markdown>{question.title}</Markdown>
+      <Markdown className={style.markdown} >{question.text}</Markdown>
     </div>
   )
 }

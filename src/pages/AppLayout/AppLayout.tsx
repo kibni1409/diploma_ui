@@ -51,7 +51,7 @@ const AppLayout = () => {
           to={getMultiList()}
           onClick={onClose}
         >
-          Мультимедия
+          Видеоматериал
         </NavLink>
       </Drawer>
       <Outlet/>

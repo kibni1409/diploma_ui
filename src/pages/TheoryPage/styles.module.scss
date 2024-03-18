@@ -1,6 +1,7 @@
 .theory {
   width: 80%;
   max-width: 800px;
+  color: white !important;
 
   &Body {
     width: 80%;
@@ -9,3 +10,8 @@
     color: white;
   }
 }
+
+.markdown {
+  color: white !important;
+}
+
