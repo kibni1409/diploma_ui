@@ -1,7 +1,7 @@
 import {NavLink, Outlet} from 'react-router-dom';
 import React, {useState} from 'react';
 import {Button, Drawer} from 'antd';
-import styles from './styles.module.scss';
+import styles from  "./styles.module.scss";
 import {
     getCodeEditor,
     getMultiList,
